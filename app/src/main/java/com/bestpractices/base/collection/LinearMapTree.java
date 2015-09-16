@@ -1,6 +1,6 @@
 package com.bestpractices.base.collection;
 
-import com.bestpractices.base.Check;
+import com.bestpractices.base.Assert;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,7 +18,7 @@ public abstract class LinearMapTree<E extends LinearMapTree<E>> extends LinkedTr
     public final E get(int position) {
         // 1) exclude self node
         ++position;
-        Check.r(position > 0 || position < nodeCount());
+        Assert.r(position > 0 || position < nodeCount());
 
         // 2) search
         E curr = (E) this;
@@ -197,7 +197,7 @@ public abstract class LinearMapTree<E extends LinearMapTree<E>> extends LinkedTr
             }
         }
         if (lca == null) {
-            Check.d(false);
+            Assert.d(false);
             return;
         }
 

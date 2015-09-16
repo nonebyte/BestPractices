@@ -4,12 +4,12 @@ package com.bestpractices.base;
 /**
  * The built-in assert() has no effect on android devices unless you run: adb
  * shell setprop debug.assert 1 for you device. So we build our own
- * {@link #Check} to do assertion things.
+ * {@link #Assert} to do assertion things.
  *
  * @see http
  * ://stackoverflow.com/questions/2364910/can-i-use-assert-on-android-devices
  */
-public class Check {
+public class Assert {
     /**
      * Check condition for DEBUG
      */

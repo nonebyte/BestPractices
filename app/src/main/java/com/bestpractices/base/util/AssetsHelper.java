@@ -2,7 +2,7 @@ package com.bestpractices.base.util;
 
 import android.content.res.AssetManager;
 
-import com.bestpractices.base.Check;
+import com.bestpractices.base.Assert;
 import com.bestpractices.base.ContextManager;
 
 import java.io.File;
@@ -60,7 +60,7 @@ public class AssetsHelper {
             outputStream.flush();
             outputStream.close();
         } catch (IOException e) {
-            Check.d(e);
+            Assert.d(e);
             bRet = false;
         }
 
@@ -79,7 +79,7 @@ public class AssetsHelper {
         try {
             files = assetManager.list(folder);
         } catch (Exception e) {
-            Check.d(e);
+            Assert.d(e);
         }
         return files;
     }
@@ -92,7 +92,7 @@ public class AssetsHelper {
                 output.write(buffer, 0, read);
             }
         } catch (IOException e) {
-            Check.d(e);
+            Assert.d(e);
         }
     }
 }

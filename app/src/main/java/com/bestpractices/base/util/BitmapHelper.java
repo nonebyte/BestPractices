@@ -10,7 +10,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-import com.bestpractices.base.Check;
+import com.bestpractices.base.Assert;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -186,7 +186,7 @@ public class BitmapHelper {
     }
 
     public static Bitmap toBitmap(byte[] data) {
-        Check.d(null != data);
+        Assert.d(null != data);
 
         Bitmap bitmap = null;
 

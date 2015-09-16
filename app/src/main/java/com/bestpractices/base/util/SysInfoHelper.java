@@ -8,7 +8,7 @@ import android.provider.Settings.Secure;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
-import com.bestpractices.base.Check;
+import com.bestpractices.base.Assert;
 import com.bestpractices.base.ContextManager;
 
 import java.io.BufferedReader;
@@ -165,7 +165,7 @@ public class SysInfoHelper {
             try {
                 return Build.getRadioVersion();
             } catch (Throwable e) {
-                Check.d(e);
+                Assert.d(e);
             }
         }
         return UNKNOWN;

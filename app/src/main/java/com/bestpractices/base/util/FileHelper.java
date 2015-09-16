@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 import android.os.Environment;
 import android.text.TextUtils;
 
-import com.bestpractices.base.Check;
+import com.bestpractices.base.Assert;
 import com.bestpractices.base.ContextManager;
 import com.bestpractices.base.collection.IntArrayList;
 
@@ -149,7 +149,7 @@ public final class FileHelper {
         private final FileAsyncOperationCallback<InputStream, Result> mCallback;
 
         public FileOpenAsyncTask(FileAsyncOperationCallback<InputStream, Result> callback) {
-            Check.r(callback != null);
+            Assert.r(callback != null);
 
             mCallback = callback;
         }

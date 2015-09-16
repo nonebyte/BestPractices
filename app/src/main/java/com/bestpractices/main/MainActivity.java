@@ -12,7 +12,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ContextManager.init(this);
-
         setContentView(R.layout.activity_main);
     }
 }

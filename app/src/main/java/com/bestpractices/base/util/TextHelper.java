@@ -1,6 +1,6 @@
 package com.bestpractices.base.util;
 
-import com.bestpractices.base.Check;
+import com.bestpractices.base.Assert;
 
 import java.util.ArrayList;
 
@@ -47,13 +47,13 @@ public final class TextHelper {
     // Concat
 
     public static final String concat(String... objs) {
-        Check.r(objs.length > 1 && objs[0] != null);
+        Assert.r(objs.length > 1 && objs[0] != null);
         StringBuilder sb = new StringBuilder();
         return concat(sb, objs);
     }
 
     public static final String concat(StringBuilder sb, String... objs) {
-        Check.r(sb != null);
+        Assert.r(sb != null);
         for (int i = 0, len = objs.length; i < len; ++i) {
             if (objs[i] != null) {
                 sb.append(objs[i]);

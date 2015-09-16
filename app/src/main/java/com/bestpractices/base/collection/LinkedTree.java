@@ -1,6 +1,6 @@
 package com.bestpractices.base.collection;
 
-import com.bestpractices.base.Check;
+import com.bestpractices.base.Assert;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -46,7 +46,7 @@ public abstract class LinkedTree<E extends LinkedTree<E>> {
     }
 
     public E add(int index, E child) {
-        Check.r(child != null);
+        Assert.r(child != null);
 
         E thisNode = (E) this;
         ensureChildren().add(index, child);
@@ -58,7 +58,7 @@ public abstract class LinkedTree<E extends LinkedTree<E>> {
         E thisNode = (E) this;
         ensureChildren().addAll(index, collection);
         for (E child : collection) {
-            Check.r(child != null);
+            Assert.r(child != null);
             child.mParent = thisNode;
         }
 
@@ -142,7 +142,7 @@ public abstract class LinkedTree<E extends LinkedTree<E>> {
     // Set
 
     public void set(int index, E child) {
-        Check.r(child != null);
+        Assert.r(child != null);
 
         E oldChild = childAt(index);
         if (oldChild != child) {

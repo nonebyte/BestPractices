@@ -1,6 +1,6 @@
 package com.bestpractices.base.util;
 
-import com.bestpractices.base.Check;
+import com.bestpractices.base.Assert;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -19,7 +19,7 @@ public class ReflectHelper {
             ctr.setAccessible(true);
             return ctr.newInstance(args);
         } catch (Throwable e) {
-            Check.r(e);
+            Assert.r(e);
             return null;
         }
     }
@@ -32,7 +32,7 @@ public class ReflectHelper {
             method.setAccessible(true);
             return method;
         } catch (Throwable e) {
-            Check.r(e);
+            Assert.r(e);
             return null;
         }
     }
@@ -49,7 +49,7 @@ public class ReflectHelper {
 
     @SuppressWarnings("unchecked")
     public static <T> T getFieldValue(Object target, String... fieldNames) {
-        Check.r(target != null && fieldNames.length > 0);
+        Assert.r(target != null && fieldNames.length > 0);
         try {
             Field field;
             Class<?> cls = target.getClass();
@@ -74,7 +74,7 @@ public class ReflectHelper {
         try {
             return invokeStatic(Class.forName(className), methodName, argTypes, args);
         } catch (Throwable e) {
-            Check.r(e);
+            Assert.r(e);
             return null;
         }
     }
@@ -87,7 +87,7 @@ public class ReflectHelper {
         try {
             return invoke(null, classType, methodName, argTypes, args);
         } catch (Throwable e) {
-            Check.r(e);
+            Assert.r(e);
             return null;
         }
     }
@@ -108,7 +108,7 @@ public class ReflectHelper {
         try {
             return method.invoke(obj, args);
         } catch (Throwable e) {
-            Check.r(e);
+            Assert.r(e);
             return null;
         }
     }
@@ -119,7 +119,7 @@ public class ReflectHelper {
             method.setAccessible(true);
             return method.invoke(obj, args);
         } catch (Throwable e) {
-            Check.r(e);
+            Assert.r(e);
             return null;
         }
     }
@@ -134,7 +134,7 @@ public class ReflectHelper {
             constructor.setAccessible(true);
             return constructor.newInstance(args);
         } catch (Exception e) {
-            Check.d(e);
+            Assert.d(e);
         }
         return null;
     }

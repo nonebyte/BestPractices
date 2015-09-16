@@ -1,6 +1,6 @@
 package com.bestpractices.base.collection;
 
-import com.bestpractices.base.Check;
+import com.bestpractices.base.Assert;
 
 import java.util.ArrayList;
 
@@ -47,9 +47,9 @@ public class StackPool<T> {
      * @param adapter
      */
     public StackPool(int maxRecycled, int capacity, ItemAdapter<T> adapter) {
-        Check.r(maxRecycled >= 0);
-        Check.r(capacity >= 0);
-        Check.r(adapter != null);
+        Assert.r(maxRecycled >= 0);
+        Assert.r(capacity >= 0);
+        Assert.r(adapter != null);
 
         mMaxRecycled = maxRecycled;
         mRecycledStack = new ArrayList<T>(Math.min(capacity, maxRecycled));
@@ -57,7 +57,7 @@ public class StackPool<T> {
     }
 
     public void setMaxRecycled(int max) {
-        Check.r(max >= 0);
+        Assert.r(max >= 0);
 
         mMaxRecycled = max;
         final ArrayList<T> stack = mRecycledStack;
@@ -104,7 +104,7 @@ public class StackPool<T> {
 
     public void recycle(T item, boolean pending) {
         if (item == null) {
-            Check.d(false);
+            Assert.d(false);
             return;
         }
 
@@ -123,7 +123,7 @@ public class StackPool<T> {
                     onItemDestroy(item);
                 }
             } else {
-                Check.d(false, item + " is repeatly recycled!");
+                Assert.d(false, item + " is repeatly recycled!");
             }
         }
     }

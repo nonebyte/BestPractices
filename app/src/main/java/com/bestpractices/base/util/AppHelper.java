@@ -4,7 +4,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.Signature;
 
-import com.bestpractices.base.Check;
+import com.bestpractices.base.Assert;
 import com.bestpractices.base.ContextManager;
 
 import java.io.ByteArrayInputStream;
@@ -96,11 +96,11 @@ public class AppHelper {
 
             ret = byteToHexStr(md5.digest(X509Cert.getSignature()));
         } catch (NameNotFoundException e) {
-            Check.d(e);
+            Assert.d(e);
         } catch (NoSuchAlgorithmException e) {
-            Check.d(e);
+            Assert.d(e);
         } catch (CertificateException e) {
-            Check.d(e);
+            Assert.d(e);
         }
 
         return ret;
