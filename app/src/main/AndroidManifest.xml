@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (C) 2005-2015 UCWeb Inc. All rights reserved.
+  ~  Description :AndroidManifest.xml
+  ~
+  ~  Creation    : 2015-09-16
+  ~  Author      : chenjun3@ucweb.com
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bestpractices" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name">
+        <activity
+            android:name=".main.MainActivity"
+            android:theme="@android:style/Theme.DeviceDefault"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
